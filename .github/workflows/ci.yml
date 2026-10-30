@@ -13,7 +13,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-26.04, windows-latest]
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
@@ -28,7 +28,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-26.04, windows-latest]
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
@@ -42,7 +42,7 @@ jobs:
         run: yarn test --coverage --logHeapUsage -w=4 --workerIdleMemoryLimit=1.5G
 
       - name: Upload coverage to Codecov
-        if: matrix.os == 'ubuntu-latest'
+        if: matrix.os == 'ubuntu-26.04'
         uses: codecov/codecov-action@v5
         with:
           fail_ci_if_error: false
@@ -51,7 +51,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-26.04, windows-latest]
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
@@ -66,7 +66,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-26.04, windows-latest]
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
@@ -81,7 +81,7 @@ jobs:
         run: yarn build-node-tools
 
       - name: Upload node-tools-dist artifact
-        if: matrix.os == 'ubuntu-latest'
+        if: matrix.os == 'ubuntu-26.04'
         uses: actions/upload-artifact@v7
         with:
           name: node-tools-dist
@@ -91,7 +91,7 @@ jobs:
         run: yarn build-cli
 
       - name: Upload profiler-cli artifact
-        if: matrix.os == 'ubuntu-latest'
+        if: matrix.os == 'ubuntu-26.04'
         uses: actions/upload-artifact@v7
         with:
           name: profiler-cli
@@ -101,7 +101,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-26.04, windows-latest]
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
@@ -116,7 +116,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-26.04, windows-latest]
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
@@ -131,7 +131,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-26.04, windows-latest]
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
@@ -146,7 +146,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-26.04, windows-latest]
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
@@ -158,7 +158,7 @@ jobs:
         run: yarn test-lockfile
 
   shellcheck:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
